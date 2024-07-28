@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+class addamount
+{
+	int amo;
+	addamount()
+	{
+		amo = 50;
+	}
+}
+class noamo extends addamount
+{
+	void amo1()
+	{
+		amo = super.amo;
+		System.out.println("piggie bank balance before adding the money : " +amo);
+	}
+}
+class isamo extends addamount
+{
+	void amo2()
+	{
+		amo = super.amo;
+		int dep;
+		Scanner n = new Scanner (System.in);
+		System.out.println("enter the number to add inside the piggie bank : ");
+		dep = n.nextInt();
+		System.out.println("piggie bank balance after adding the money : " +(dep+amo));
+	}
+}
+class inamount
+{
+	public static void main(String[] args)
+	{
+		noamo a = new noamo();
+		a.amo1();
+		isamo i = new isamo();	
+		i.amo2();
+	}
+}
+
