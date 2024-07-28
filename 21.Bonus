@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+class person
+{
+	String name;
+	int id;
+	long sal;
+	person()
+	{
+		Scanner n = new Scanner (System.in);
+		System.out.println("enter employee name:");
+		name = n.next();
+		System.out.println("enter emp id and salary");
+		id = n.nextInt();
+		sal = n.nextLong();
+	}
+}
+class admin extends person
+{
+	long sal = super.sal;
+	void bonus()
+	{
+		
+		System.out.println("Bonus percentage is 10%");
+		System.out.println("Final bonus" +(0.10*sal));
+	}
+}
+class account extends person
+{
+	long sal = super.sal;
+	void bonus()
+	{
+		System.out.println("Bonus percentage is 15%");
+		System.out.println("Final bonus : " +(0.15*sal));
+	}
+}
+class bonusp
+{
+	public static void main(String[] args)
+	{
+		admin a = new admin();
+		a.bonus();
+		account c = new account();
+		c.bonus();
+	}
+}
+		
+
